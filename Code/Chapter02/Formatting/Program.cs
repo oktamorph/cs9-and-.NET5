@@ -40,7 +40,7 @@ Console.WriteLine($"Hello {firstName}, you look good for {age}\n\t");
 Console.Write("Press any key combination: ");
 ConsoleKeyInfo key = Console.ReadKey();
 Console.WriteLine();
-Console.WriteLine("Key: {0}, Char: {1}, Modifiers: {2}\n\thyp",
+Console.WriteLine("Key: {0}, Char: {1}, Modifiers: {2}\n\t",
     arg0: key.Key,
     arg1: key.KeyChar,
     arg2: key.Modifiers);
