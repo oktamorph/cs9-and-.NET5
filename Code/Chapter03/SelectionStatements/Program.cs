@@ -22,7 +22,7 @@ Console.WriteLine($"My random number is {number}");
 switch (number)
 {
     case 1:
-        Console.WriteLine("One1");
+        Console.WriteLine("One");
         break;
     case 2:
         Console.WriteLine("Two");
