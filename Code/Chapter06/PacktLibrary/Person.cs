@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace PacktLibrary
 {
-    public class Person
+    public class Person : IComparable<Person>
     {
         // fields
         public string Name;
@@ -41,29 +41,33 @@ namespace PacktLibrary
         /// </summary>
         public static int Factorial(int number)
         {
-            if(number < 0)
+            if (number < 0)
             {
                 throw new ArgumentException($"{nameof(number)} cannot be less than zero.");
             }
             return LocalFactorial(number);
-            
+
             int LocalFactorial(int localnumber) // local function
             {
                 if (localnumber < 1) return 1;
                 return localnumber * LocalFactorial(localnumber - 1);
             }
         }/// <summary>
-        /// Method.
-        /// </summary>
+         /// Method.
+         /// </summary>
         public void Poke()
         {
             AngerLevel++;
-            if(AngerLevel >= 3)
+            if (AngerLevel >= 3)
             {
                 // if something is listening...
                 Shout?.Invoke(this, EventArgs.Empty);
             }
         }
 
+        public int CompareTo(Person? other)
+        {
+            return Name.CompareTo(other.Name);
+        }
     }
 }
