@@ -89,6 +89,21 @@ namespace PeopleApp
             var dv3 = dv1 + dv2;
 
             Console.WriteLine($"({dv1.X}, {dv1.Y}) + ({dv2.X}, {dv2.Y}) = ({dv3.X}, {dv3.Y})");
+
+            using (Animal a = new Animal())
+            {
+                // code that uses the Animal instance
+            }
+
+            Animal a = new Animal();
+            try
+            {
+                // code that uses the Animal instance
+            }
+            finally
+            {
+                if (a != null) a.Dispose();
+            }
         }
         private static void Harry_Shout(object sender, EventArgs e)
         {
