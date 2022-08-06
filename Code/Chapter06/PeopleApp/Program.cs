@@ -89,11 +89,12 @@ namespace PeopleApp
             var dv3 = dv1 + dv2;
 
             Console.WriteLine($"({dv1.X}, {dv1.Y}) + ({dv2.X}, {dv2.Y}) = ({dv3.X}, {dv3.Y})");
+            Console.WriteLine();
 
-            using (Animal a = new Animal())
-            {
-                // code that uses the Animal instance
-            }
+            //using (Animal a = new Animal())
+            //{
+            //    // code that uses the Animal instance
+            //}
 
             Animal a = new Animal();
             try
@@ -104,6 +105,17 @@ namespace PeopleApp
             {
                 if (a != null) a.Dispose();
             }
+
+            Employee john = new Employee
+            {
+                Name = "John Jones",
+                DateOfBirth = new DateTime(1990, 7, 28)
+            };
+            john.WriteToConsole();
+            john.EmployeeCode = "JJ001";
+            john.HireDate = new DateTime(2014, 11, 23);
+            Console.WriteLine($"{john.Name} was hired on {john.HireDate:dd/MM/yy}");
+            Console.WriteLine(john.ToString());
         }
         private static void Harry_Shout(object sender, EventArgs e)
         {
